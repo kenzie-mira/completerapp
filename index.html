@@ -1,0 +1,86 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_" />
+    <title>Completer App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-container">
+            <div class="icon"><span class="material-symbols-rounded">select_check_box</span></div>
+        </div>
+        <h1 class="form__title">Join TaskMaster</h1>
+        <p class="form__paragraph">Create an account to boost your productivity</p>
+        <div class="form__inputbtn">
+            <button id="loginBtn" class="tab active">Login</button>
+            <button id="SignUpBtn" class="tab">Sign Up</button>
+        </div>
+        <form action="" id="login" class="form">
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <label for="form__input">Email</label>
+                <span class="material-symbols-rounded">mail</span>
+                <input type="email" class="form__input" placeholder="Hello@example.com" autocomplete="email">
+                <div class="form__input--error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <label for="form__input">Password</label>
+                <span class="material-symbols-rounded">lock</span>
+                <input type="password" placeholder="......" class="form__input" autocomplete="current-password">
+                <div class="form__input--error-message"></div>
+            </div>
+            <div class="form__button">
+                <button class="form__button1"><span class="material-symbols-rounded">help</span>Help?</button>
+                <button class="form__button2" type="submit">Next Step</button>
+            </div>
+        </form>
+
+
+
+        <form action="" id="createAccount" class="form">
+            <div class="form__input-group">
+                <label for="form__input">Full Name*</label>
+                <span class="material-symbols-rounded">person</span>
+                <input type="text" class="form__input" placeholder="John Doe" required autocomplete="given-name">
+                <div class="form__input--error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <label for="form__input">Email</label>
+                <span class="material-symbols-rounded">mail</span>
+                <input type="email" class="form__input" placeholder="Hello@example.com" required autocomplete="email">
+                <div class="form__input--error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <label for="form__input">Password</label>
+                <span class="material-symbols-rounded">lock</span>
+                <input type="password" placeholder="......" class="form__input" required minlength="6"
+                    autocomplete="new-password">
+                <p>Password must be at least 6 characters long</p>
+                <div class="form__input--error-message"></div>
+            </div>
+            <div class="form__button">
+            <button class="form__button1"><span class="material-symbols-rounded">help</span>Help?</button>
+            <button class="form__button2" type="submit">Next Step</button>
+        </div>
+        </form>
+        <div class="form__text">
+            <p class="text">By continuing you agree to our <a href="#" class="form__link">Terms of Service</a> &
+                <a href="#" class="form__link">Privacy Policy</a>
+            </p>
+            <p>© 2025 TaskMaster | Made for University Students</p>
+        </div>
+    </div>
+
+
+
+    <script src="assets/js/global.js"></script>
+</body>
+
+</html>
+</Doctype>
