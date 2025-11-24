@@ -26,13 +26,15 @@
             <div class="form__input-group">
                 <label for="form__input">Email</label>
                 <span class="material-symbols-rounded">mail</span>
-                <input type="email" class="form__input" placeholder="Hello@example.com" autocomplete="email">
+                <input type="email" class="form__input" id="login-email" placeholder="Hello@example.com"
+                    autocomplete="email">
                 <div class="form__input--error-message"></div>
             </div>
             <div class="form__input-group">
                 <label for="form__input">Password</label>
                 <span class="material-symbols-rounded">lock</span>
-                <input type="password" placeholder="......" class="form__input" autocomplete="current-password">
+                <input type="password" placeholder="......" id="login-password" class="form__input"
+                    autocomplete="current-password">
                 <div class="form__input--error-message"></div>
             </div>
             <div class="form__button">
@@ -47,27 +49,29 @@
             <div class="form__input-group">
                 <label for="form__input">Full Name*</label>
                 <span class="material-symbols-rounded">person</span>
-                <input type="text" class="form__input" placeholder="John Doe" required autocomplete="given-name">
+                <input type="text" class="form__input" id="input-name" placeholder="John Doe" required
+                    autocomplete="given-name">
                 <div class="form__input--error-message"></div>
             </div>
             <div class="form__input-group">
                 <label for="form__input">Email</label>
                 <span class="material-symbols-rounded">mail</span>
-                <input type="email" class="form__input" placeholder="Hello@example.com" required autocomplete="email">
+                <input type="email" class="form__input" id="input-email" placeholder="Hello@example.com" required
+                    autocomplete="email">
                 <div class="form__input--error-message"></div>
             </div>
             <div class="form__input-group">
                 <label for="form__input">Password</label>
                 <span class="material-symbols-rounded">lock</span>
-                <input type="password" placeholder="......" class="form__input" required minlength="6"
-                    autocomplete="new-password">
+                <input type="password" placeholder="......" class="form__input" id="input-password" required
+                    minlength="6">
                 <p>Password must be at least 6 characters long</p>
                 <div class="form__input--error-message"></div>
             </div>
             <div class="form__button">
-            <button class="form__button1"><span class="material-symbols-rounded">help</span>Help?</button>
-            <button class="form__button2" type="submit">Next Step</button>
-        </div>
+                <button class="form__button1"><span class="material-symbols-rounded">help</span>Help?</button>
+                <button class="form__button2" type="submit">Next Step</button>
+            </div>
         </form>
         <div class="form__text">
             <p class="text">By continuing you agree to our <a href="#" class="form__link">Terms of Service</a> &
@@ -76,6 +80,7 @@
             <p>© 2025 TaskMaster | Made for University Students</p>
         </div>
     </div>
+
 
 
 

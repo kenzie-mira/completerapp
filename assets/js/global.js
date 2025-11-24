@@ -12,7 +12,7 @@ function setInputError(inputElement, message) {
         console.error("Could not find .form__input--error-message in", inputGroup);
         return;
     }
-    
+
     inputElement.classList.add("form__input--error");
     errorElement.textContent = message;
 }
@@ -44,14 +44,14 @@ function isValidEmail(email) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // Get ALL the elements we need
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
     const loginBtn = document.querySelector("#loginBtn");
     const signUpBtn = document.querySelector("#SignUpBtn");
     const formTitle = document.querySelector(".form__title");
-    const formParagraph = document.querySelector(".form__paragraph"); 
+    const formParagraph = document.querySelector(".form__paragraph");
 
 
     const loginMessageElement = document.querySelector(".form__message");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         signUpBtn.classList.remove("active");
         formTitle.textContent = "Welcome Back!";
         formParagraph.textContent = "Enter your details to access your account";
-        
+
         if (loginMessageElement) {
             loginMessageElement.textContent = "";
         }
@@ -85,20 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
         loginBtn.classList.remove("active");
         formTitle.textContent = "Join TaskMaster";
         formParagraph.textContent = "Create an account to boost your productivity";
-        
+
         createAccountForm.querySelectorAll(".form__input").forEach(clearInputError);
     });
 
     // --- Login Form Validation ---
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let allValid = true; 
+        let allValid = true;
 
         if (loginMessageElement) {
             loginMessageElement.textContent = "";
         }
         loginForm.querySelectorAll(".form__input").forEach(clearInputError);
-        
+
         const emailInput = loginForm.querySelector('input[type="email"]');
         const passwordInput = loginForm.querySelector('input[type="password"]');
 
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const fullNameInput = createAccountForm.querySelector('input[type="text"]');
         const emailInput = createAccountForm.querySelector('input[type="email"]');
         const passwordInput = createAccountForm.querySelector('input[type="password"]');
-        
+
         if (!fullNameInput.value.trim()) {
             setInputError(fullNameInput, "Full Name is required");
             allValid = false;
@@ -156,4 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Sign Up form is valid! Creating account...");
         }
     });
+
+
+    document.getElementById('createAccount').addEventListener('submit', function (e) {
+        e.preventDefault(); 
+        const name = document.getElementById('input-name').value;
+        const email = document.getElementById('input-email').value;
+        localStorage.setItem('currentUser_Name', name);
+        localStorage.setItem('currentUser_Email', email);
+        window.location.href = 'dashboard/dashboard.html'; 
+    });
+
+    document.getElementById('login').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        localStorage.setItem('currentUser_Email', email);
+        window.location.href = '/dashboard/dashboard.html';
+    });
+
 });

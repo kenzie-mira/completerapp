@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/dashboard/components/squareboxes/squareboxes.css">
+<div id="container">
+    <div class="tasks">
+        <h3 class="text">Active Tasks</h3>
+        <div id="icon-container">
+            <i class="material-symbols-rounded" id="symbol">select_check_box</i>
+        </div>
+    </div>
+    <div class="taskkk">
+        <h3 class="number1">0</h3>
+        <p class="number2">0 completed</p>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-text]');
+        const textElement = container.querySelector('.text');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-text');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+    
+    
+    (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-icon]');
+        const textElement = container.querySelector('#symbol');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-icon');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+
+    (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-bgcolor]');
+        const textElement = container.querySelector('#icon-container');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-bgcolor');
+            if (newLabel) {
+                textElement.style.backgroundColor = newLabel;
+            }
+        }
+    })();
+
+     (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-number1]');
+        const textElement = container.querySelector('.number1');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-number1');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+
+     (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-number2]');
+        const textElement = container.querySelector('.number2');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-number2');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+</script>

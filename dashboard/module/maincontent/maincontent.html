@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/dashboard/module/maincontent/maincontent.css">
+<div class="body">
+    <h1>
+        <span id="greeting-text">Good morning,</span>
+        <span id="display-name">Kenzie Mira!</span>
+    </h1>
+    <p>Here's what's happening with your productivity today</p>
+    <div class="body-class">
+        <div data-import="/dashboard/components/squareboxes/squareboxes.html"></div>
+        <div data-import="/dashboard/components/squareboxes/squareboxes.html" data-change-text="Total Expenses"
+            data-change-icon="<span class=material-symbols-rounded>attach_money</span>" data-change-bgcolor="#0092B8"
+            data-change-number1="$0.00" data-change-number2="This Period"></div>
+        <div data-import="/dashboard/components/squareboxes/squareboxes.html" data-change-text="Total notes"
+            data-change-icon="<span class=material-symbols-rounded>note_add</span>" data-change-bgcolor="#00A63E"
+            data-change-number2="Saved Notes"></div>
+        <div data-import="/dashboard/components/squareboxes/squareboxes.html" data-change-text="completion Rate"
+            data-change-icon="<span class=material-symbols-rounded>trending_up</span>" data-change-bgcolor="#4F39F6"
+            data-change-number1="0%" data-change-number2="Task Completion"></div>
+    </div>
+    <div class="body-card">
+        <div data-import="/dashboard/components/bigsquareboxes/bigsquareboxes.html"></div>
+        <div data-import="/dashboard/components/bigsquareboxes2/bigsquareboxes2.html"></div>
+    </div>
+
+    <script src="/dashboard/module/maincontent/maincontent.js"></script>
