@@ -29,7 +29,7 @@
             localStorage.removeItem('currentUser_Name');
             localStorage.removeItem('currentUser_Email');
 
-            window.location.href = '../auth.html';
+            window.location.href = '../index.html';
         })
     }
 })
