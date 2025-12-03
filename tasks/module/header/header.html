@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/tasks/module/header/header.css">
+<div id="header">
+    <div class="header-container">
+        <div class="header-icon"><i class="material-symbols-rounded">select_check_box</i>
+        </div>
+    </div>
+    <div class="header-text">
+        <h3>Task Management</h3>
+        <p>Manage and track your task</p>
+    </div>
+</div>
+<script>
+    (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-text]');
+        const textElement = container.querySelector('h3');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-text');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+    
+    
+    (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-icon]');
+        const textElement = container.querySelector('.header-icon');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-icon');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();
+     (function () {
+        const me = document.currentScript;
+        const container = me.parentElement;
+        const wrapper = me.closest('[data-change-text2]');
+        const textElement = container.querySelector('p');
+        if (wrapper && textElement) {
+            const newLabel = wrapper.getAttribute('data-change-text2');
+            if (newLabel) {
+                textElement.innerHTML = newLabel;
+            }
+        }
+    })();

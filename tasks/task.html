@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completer App</title>
+    <link href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_" />
+
+    <link rel="stylesheet" href="/tasks/assets/task.css">
+</head>
+
+<body>
+    <section class="task-wrapper">
+        <aside data-import="/dashboard/module/sidebar/sidebar.html" class="task-wrapper__left"></aside>
+        <main class="task-wrapper__content">
+            <div class="task-wrapper__div">
+                <header class="boarder-header">
+                    <div data-import="/tasks/module/header/header.html"></div>
+                </header>
+                <div class="task-section">
+                    <div class="task__inputbtn">
+                        <button class="task__btn active" onclick="switchView('tasks')">
+                            <i class="material-symbols-rounded">check_circle</i>
+                            My Tasks
+                        </button>
+                        <button class="task__btn" onclick="switchView('ai')">
+                            <i class="material-symbols-rounded">finance</i>
+                            AI Summary
+                        </button>
+                    </div>
+                    <div id="view-tasks">
+                        <div class="task__text">
+                            <div class="task-text">
+                                <h1 id="active-count">0</h1>
+                                <p>Active Tasks</p>
+                            </div>
+                            <div class="task-text">
+                                <h1 class="green" id="completed-count">0</h1>
+                                <p>Completed</p>
+                            </div>
+                            <button class="add__btn" onclick="openModal()">
+                                <i class="material-symbols-rounded">add</i>Add Task
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="task-container" class="task-list"></div>
+
+                    <div class="task-paragraph" id="empty-state">
+                        <i class="material-symbols-rounded">circle</i>
+                        <p class="p1">No tasks yet</p>
+                        <p class="p2">Click "Add Task" to create your first task</p>
+                    </div>
+                </div>
+
+                <div id="view-ai" class="ai-view" style="display: none;">
+                    <div class="ai-header-section">
+                        <div class="ai-title-block">
+                            <h2>AI-Powered Task Summary</h2>
+                            <p>Get insights and recommendations for your tasks</p>
+                        </div>
+                        <button class="generate-btn">
+                            <i class="material-symbols-rounded">auto_awesome</i> Generate New
+                        </button>
+                    </div>
+
+                    <div class="ai-sub-tabs">
+                        <button class="sub-tab-btn active" onclick="switchAiTab('latest')">
+                            <i class="material-symbols-rounded">auto_awesome</i> Latest Summary
+                        </button>
+                        <button class="sub-tab-btn" onclick="switchAiTab('history')">
+                            <i class="material-symbols-rounded">history</i> History (0)
+                        </button>
+                    </div>
+
+                    <div id="ai-latest-content" class="ai-content-box">
+                        <div class="empty-ai-state">
+                            <div class="ai-icon-circle">
+                                <i class="material-symbols-rounded">finance</i>
+                            </div>
+                            <h3>No summary generated yet</h3>
+                            <p>Click "Generate New" to get AI powered insights</p>
+                        </div>
+                    </div>
+
+                    <div id="ai-history-content" class="ai-content-box" style="display: none;">
+                        <div class="empty-ai-state">
+                            <div class="ai-icon-circle">
+                                <i class="material-symbols-rounded">history</i>
+                            </div>
+                            <h3>No summary history</h3>
+                            <p>Generate summaries to build up your history</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </section>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="material-symbols-rounded">auto_awesome</i> Create New Task</h2>
+                <i class="material-symbols-rounded" onclick="closeModal()" style="cursor: pointer;">close</i>
+            </div>
+            <p class="modal-sub">Add a new task to your productivity list</p>
+            <form id="task-form">
+                <label>Title</label>
+                <div class="input-group">
+                    <i class="material-symbols-rounded">auto_awesome</i>
+                    <input type="text" id="task-title" placeholder="e.g., Finish Project Report" required>
+                </div>
+                <label>Description</label>
+                <textarea id="task-desc" placeholder="Add task details..."></textarea>
+                <div class="row">
+                    <div class="col">
+                        <label>Priority</label>
+                        <select id="task-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Due Date</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cancel__btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="create__btn">Create Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/tasks/assets/task.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f3f4f6;
+  --sidebar-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+}
+.task-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+.task-wrapper__left {
+  width: 20%;
+  background-color: #ffffff;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.task-wrapper__content {
+  width: 80%;
+  background-color: #f9f9fb;
+  height: 100%;
+}
+.task-wrapper__div {
+  margin: 20px;
+}
+.boarder-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid var(--border-color);
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+}
+
+.task__inputbtn {
+  display: flex;
+  background-color: #f1f3f5;
+  width: 254px;
+  gap: 20px;
+  padding: 10px;
+  height: 49px;
+  border-radius: 12px;
+}
+
+.task__inputbtn button {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(30, 41, 59);
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 12px;
+  height: 39px;
+}
+.task__inputbtn i {
+  font-size: 14px;
+}
+.task__inputbtn button.active {
+  background-color: #fff;
+  color: #1a1a1a;
+  box-shadow: 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.task__text {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.task__text button {
+  margin-left: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #155dfc;
+  border: none;
+  gap: 7px;
+}
+
+.task__text button i {
+  font-size: 14px;
+}
+.task-text h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.task-text p {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.task-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.task-text .green {
+  color: green;
+}
+
+.task-paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 994px;
+  border: 3px dashed #c6d2ff;
+  padding: 40px;
+  background-color: #f3f6fd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.task-paragraph i {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 24px;
+  color: oklch(0.785 0.115 274.713);
+}
+
+.task-paragraph .p1 {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(100, 116, 139);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.task-paragraph .p2 {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(100, 116, 139);
+  margin-top: 0;
+}
+
+.task-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-info h4 {
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+.task-info p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+.badges {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+}
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f3f4f6;
+}
+.priority-high {
+  color: #dc2626;
+  background: #fef2f2;
+}
+.priority-medium {
+  color: #d97706;
+  background: #fffbeb;
+}
+
+.check-btn {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.check-btn:hover {
+  border-color: var(--primary);
+}
+.check-btn.completed {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background: white;
+  width: 450px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.modal-sub {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.close-icon {
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 3px var(--primary);
+}
+.input-group i {
+  color: var(--text-light);
+  margin-right: 10px;
+}
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+textarea,
+select,
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+textarea {
+  resize: none;
+  height: 80px;
+}
+.row {
+  display: flex;
+  gap: 15px;
+}
+.col {
+  flex: 1;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+.cancel-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+}
+.create-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.task-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.task-card.completed-task {
+  background-color: #f9fafb;
+  opacity: 0.8;
+}
+.task-card.completed-task h4 {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.task-right-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.delete-btn {
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+.ai-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.ai-title-block h2 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+.ai-title-block p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.generate-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.generate-btn:hover {
+  background-color: #2563eb;
+}
+
+.ai-sub-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.sub-tab-btn {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.sub-tab-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.sub-tab-btn.active {
+  background-color: #eff6ff;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.ai-content-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 20px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-ai-state {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.ai-icon-circle {
+  font-size: 4rem;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+.ai-icon-circle i {
+  font-size: 4rem;
+}
+
+.empty-ai-state h3 {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.empty-ai-state p {
+  font-size: 0.85rem;
+}
+.task-section {
+  background: var(--card-bg);
+  min-height: 300px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid var(--border-color);
+  border-top: 1px solid #f0f0f0;
+  padding: 20px;
+}

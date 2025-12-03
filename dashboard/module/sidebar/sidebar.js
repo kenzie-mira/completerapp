@@ -1,14 +1,30 @@
 (function () {
-    // --- 1. Get Data ---
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+})();
+
+(function () {
     let savedName = localStorage.getItem('currentUser_Name');
     const savedEmail = localStorage.getItem('currentUser_Email') || "guest@email.com";
     if (!savedName) {
         savedName = savedEmail.split('@')[0];
     }
     const container = document.currentScript.parentElement;
-    const avatarBox = container.querySelector('.profile-avatar') || container.querySelector('#sidebar-avatar');
-    const nameBox = container.querySelector('#sidebar-name') || container.querySelector('h2');
-    const emailBox = container.querySelector('#sidebar-email') || container.querySelector('p');
+    const avatarBox = container.querySelector('.avatar') || container.querySelector('#sidebar-avatar');
+    const nameBox = container.querySelector('.sidebar-name') || container.querySelector('h2');
+    const emailBox = container.querySelector('.sidebar-email') || container.querySelector('p');
     if (nameBox) nameBox.innerText = savedName;
     if (emailBox) emailBox.innerText = savedEmail;
 
@@ -33,20 +49,3 @@
         })
     }
 })
-
-    (function () {
-        let currentPage = window.location.pathname.split('/').pop();
-
-        if (currentPage === "") {
-            currentPage = "dashboard.html";
-        }
-
-        const sidebarLinks = document.currentScript.parentElement.querySelectorAll('a')
-        sidebarLinks.forEach(link => {
-            const linkDestination = link.getAnimations('href');
-
-            if (linkDestination === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    })
